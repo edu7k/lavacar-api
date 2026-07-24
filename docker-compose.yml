@@ -3,11 +3,11 @@ services:
     image: postgres:18
     container_name: postgres-dev
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: dbadminadmin
-      POSTGRES_DB: lavacar_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
-      - "5432:5432"
+      - "${DB_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql
 
